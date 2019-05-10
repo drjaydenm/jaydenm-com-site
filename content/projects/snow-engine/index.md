@@ -2,7 +2,7 @@
 title: "SnowEngine"
 date: 2012-02-25
 status: "Complete"
-description: "A cross-platform game engine written in C# using DirectX and OpenGL."
+description: "A game engine written from the ground up in C# using DirectX and OpenGL targeting Windows, OSX & Linux"
 links: ["https://www.youtube.com/watch?v=5JApIUeIW0U"]
 ---
 
