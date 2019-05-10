@@ -1,0 +1,30 @@
+baseURL = "https://jaydenm.com/"
+languageCode = "en-au"
+title = "Jayden Meyer"
+theme = "jaydenm"
+enableEmoji = true
+enableRobotsTXT = true
+
+[params]
+  avatar = "profile.jpg"
+  author = "Jayden Meyer"
+  description = "This is the site of Jayden Meyer, a Software Developer. I talk about programming, hardware and other projects I've worked on"
+  home_image = "img/home.png"
+  
+[params.social]
+  Github = "drjaydenm"
+  Stackoverflow = "2603735"
+  Youtube = "drjaydenm"
+  Linkedin = "jayden-meyer-95227247"
+
+[[menu.main]]
+  name = "Blog"
+  identifier = "blog"
+  weight = 100
+  url = "/blog/"
+
+[[menu.main]]
+  name = "Projects"
+  identifier = "projects"
+  weight = 200
+  url = "/projects/"

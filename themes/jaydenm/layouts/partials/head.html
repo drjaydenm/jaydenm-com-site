@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="{{ .Site.Params.Author }}" />
+    {{ $description := .Site.Params.description }}
+    {{ if ( eq .Kind "page" ) }}
+      {{ $description = .Summary }}
+      {{ if .Params.description }}
+        {{ $description = .Params.description }}
+      {{ end }}
+    {{ end }}
+    {{ if $description }}<meta name="description" content="{{ truncate 150 $description }}">{{ end }}
+    <link rel="shortcut icon" type="image/x-icon" href="{{ .Site.BaseURL }}favicon.ico">
+    <title>
+    {{- $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" -}}
+    {{- if or ( eq $url "/" ) ( eq $url "" ) -}}
+      {{- .Site.Title -}}
+    {{- else -}}
+      {{- if .Params.heading -}}
+        {{- .Params.heading -}}
+      {{- else -}}
+        {{- print .Title " - " .Site.Title -}}
+      {{- end -}}
+    {{- end -}}
+    </title>
+    {{ .Hugo.Generator }}
+    <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}css/water.light.min.css" />
+    <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}css/theme.css" />
+    {{ range .Site.Params.custom_css }}
+    <link rel="stylesheet" href="{{ $.Site.BaseURL}}{{ . }}">
+    {{ end }}
+  </head>

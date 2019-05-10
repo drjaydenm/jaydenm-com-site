@@ -1,0 +1,12 @@
+{{ partial "head" . }}
+<body>
+  {{ partial "header" . }}
+  <div class="wrap">
+    <section id="error-page">
+      <h1>The page you are looking for cannot be found.</h1>
+      <h2>Click <a href="{{ .Site.BaseURL }}">here</a> to go back home.</h2>
+    </section>
+  </div>
+  {{ partial "footer" . }}
+</body>
+</html>

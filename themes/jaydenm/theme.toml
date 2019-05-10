@@ -1,0 +1,8 @@
+name = "jaydenm"
+description = "Theme for jaydenm.com"
+features = ["responsive"]
+min_version = 0.17
+
+[author]
+  name = "Jayden Meyer"
+  homepage = "https://jaydenm.com/"

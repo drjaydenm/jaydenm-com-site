@@ -1,0 +1,22 @@
+<nav>
+  <div class="container">
+    <div class="nav-left">
+      <a href="{{ .Site.BaseURL }}">
+        {{ if .Site.Params.home_image }}
+        <img src="{{ .Site.BaseURL }}{{ .Site.Params.home_image }}" alt="Home" />
+        {{ else }}
+        Home
+        {{ end }}
+      </a>
+    </div>
+    <div class="nav-right">
+      <ul>
+      {{ if .Site.Menus.main }}
+        {{ range sort .Site.Menus.main }}
+        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+        {{ end }}
+      {{ end }}
+      </ul>
+    </div>
+  </div>
+</nav>

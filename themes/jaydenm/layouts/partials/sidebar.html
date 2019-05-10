@@ -1,0 +1,18 @@
+<div class="sidebar">
+  <a href="{{ .Site.BaseURL }}" class="sidebar-title">
+    <h2>{{ .Site.Params.author }}</h2>
+  </a>
+  <div class="avatar">
+    <img class="img-circle" src="{{ .Site.BaseURL }}img/{{ .Site.Params.avatar }}" alt="Profile Image">
+  </div>
+  {{ partial "social.html" . }}
+  <div class="recent-posts">
+    <h3>Recent Posts</h3>
+    {{ range first 4 ( where ( where .Site.Pages.ByDate.Reverse "Kind" "page" ) "Section" "blog" ) }}
+    <a href="{{ .RelPermalink }}" class="post-card">
+      <h4>{{ .Title | markdownify }}</h4>
+      <p>{{ .Date.Format "January 2, 2006" }}</p>
+    </a>
+    {{ end }}
+  </div>
+</div>

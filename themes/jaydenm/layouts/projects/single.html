@@ -1,0 +1,28 @@
+{{ partial "head" . }}
+<body>
+  {{ partial "header" . }}
+  <div class="wrap wrap-sidebar">
+    {{ partial "sidebar" . }}
+    <div class="content">
+      <div class="container">
+        <div class="post-heading">
+          <h1>
+            <strong><a href="{{ .Permalink }}">{{ .Title }}</a></strong>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <time datetime="{{ .Date }}">Date Started: <span class="label">{{ .Date.Format "January 2, 2006" }}</span></time>
+          <p>Status: <span class="label">{{ cond (ne .Status "") .Status "Ongoing" }}</span></p>
+          {{ range $index, $link := .Params.links }}
+          <p>Link {{ add $index 1 }}: <a href="{{ . }}" target="_blank">{{ . }}</a></p>
+          {{ end }}
+        </div>
+        <div class="post-body">
+          {{ .Content }}
+        </div>
+      </div>
+    </div>
+  </div>
+  {{ partial "footer" . }}
+</body>
+</html>

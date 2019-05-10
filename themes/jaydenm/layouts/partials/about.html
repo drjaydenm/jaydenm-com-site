@@ -1,0 +1,7 @@
+<section id="about">
+  <div class="avatar">
+    <img class="img-circle" src="{{ .Site.BaseURL }}img/{{ .Site.Params.avatar }}" alt="Profile Image">
+  </div>
+  {{ partial "bio.html" . }}
+  {{ partial "social.html" . }}
+</section>

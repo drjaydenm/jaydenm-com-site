@@ -1,0 +1,285 @@
+html {
+    height: 100%;
+    background-color: #E7E7E7;
+}
+body {
+    margin: 0 auto;
+    padding: 0;
+    max-width: 100%;
+    background-color: transparent;
+}
+a {
+    color: #1BADFC;
+}
+a[href^="mailto"]::before {
+    display: none;
+}
+figure {
+    margin: 0 auto;
+}
+figure img {
+    display: block;
+}
+figcaption {
+    text-align: center;
+    color: #AAA;
+    font-size: 0.8rem;
+}
+tbody tr:nth-child(2n+1) {
+    background-color: #FBFBFB;
+}
+
+.label {
+    color: #FFF;
+    background-color: #66C9FF;
+    padding: 0.2rem 0.4rem;
+    border-radius: 6px;
+    margin-right: 0.2rem;
+    display: inline-block;
+}
+
+nav {
+    border-top: 0.35rem solid #1BADFC;
+    background-color: #FFF;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.075);
+}
+nav .container {
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav ul {
+    display: flex;
+    list-style-type: none;
+}
+nav a {
+    color: #444;
+    padding: 0.3rem 1rem;
+    display: inline-block;
+}
+nav a img {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+#about {
+    padding-top: 5rem;
+    text-align: center;
+}
+#about .avatar {
+    margin-bottom: 2rem;
+}
+#about .avatar img {
+    max-width: 220px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+#about .social {
+    margin-top: 2rem;
+}
+
+#error-page {
+    text-align: center;
+    padding: 5rem 0;
+}
+
+.wrap {
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    background-color: #F4F4F4;
+}
+.wrap.wrap-sidebar {
+    display: flex;
+    justify-content: space-between;
+}
+.wrap .content {
+    margin: 0 2rem;
+    flex: 1;
+}
+.content .container {
+    margin: 0 auto 2rem auto;
+    background-color: #FFF;
+    padding: 4rem 5rem;
+    box-sizing: border-box;
+}
+.content.projects {
+    columns: 2;
+}
+.content.projects .container {
+    display: inline-block;
+}
+
+.post-meta {
+    color: #AAA;
+    font-size: 0.8rem;
+    margin-bottom: 2rem;
+}
+.post-tag {
+    background-color: #EFEFEF;
+    padding: 0.2rem 0.4rem;
+    border-radius: 6px;
+    margin-right: 0.2rem;
+}
+.post-body {
+    line-height: 1.7rem;
+    font-size: 1.1rem;
+}
+.post-body .related-posts {
+    column-count: 2;
+}
+
+.sidebar {
+    flex: 0.35;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+}
+.sidebar .sidebar-title {
+    text-align: center;
+    margin-bottom: 1.3rem;
+    color: #000;
+}
+.sidebar .sidebar-title h2 {
+    margin: 0 auto;
+}
+.sidebar .avatar {
+    text-align: center;
+}
+.sidebar .avatar img {
+    max-width: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.post-card {
+    display: inline-block;
+    background-color: #FFF;
+    border: 1px solid #E3E3E3;
+    box-sizing: border-box;
+    padding: 0 1.2rem;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+.post-card:hover {
+    text-decoration: none;
+}
+.post-card p {
+    color: #AAA;
+    font-size: 0.8rem;
+}
+
+.social {
+    text-align: center;
+}
+.social-links {
+    list-style-type: none;
+    padding: 0;
+}
+.social-links li {
+    display: inline-block;
+    position: relative;
+}
+.social-links a {
+    padding: 0 0.2rem;
+    line-height: 2rem;
+}
+.social-links a svg {
+    fill: #000;
+    vertical-align: middle;
+}
+.social-links a:hover svg {
+    fill: #1BADFC;
+}
+.social-links svg {
+    width: 1.4rem;
+    height: 1.4rem;
+}
+.social-links .social-linkedin {
+    top: -2px;
+}
+
+footer {
+    color: #8F8F8F;
+    padding: 2rem 1rem;
+}
+footer .container {
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+footer a {
+    color: #5E9ECF;
+}
+
+@media (max-width: 1000px) {
+    .wrap .content {
+        margin: 0 1rem;
+    }
+
+    .content .container {
+        padding: 2rem;
+    }
+
+    .sidebar {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 860px) {
+    .wrap.wrap-sidebar {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .sidebar {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sidebar .avatar {
+        order: -1;
+        margin-right: 1rem;
+    }
+    .sidebar .avatar img {
+        max-width: 70px;
+    }
+
+    .sidebar .sidebar-title {
+        margin-bottom: 0;
+    }
+
+    .sidebar .social {
+        margin-left: 1rem;
+        margin-top: 0;
+    }
+
+    .sidebar .recent-posts {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .wrap .content {
+        margin: 0;
+    }
+
+    .content.projects {
+        columns: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .wrap.wrap.wrap-sidebar {
+        padding: 2rem 0;
+    }
+
+    .content .container {
+        padding: 1rem;
+    }
+
+    .post-body .related-posts {
+        column-count: 1;
+    }
+}
