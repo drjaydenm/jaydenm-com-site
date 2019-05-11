@@ -1,7 +1,7 @@
 ---
 title: "Hello World"
 description: ""
-date: 2019-05-07T17:51:30+10:00
+date: 2019-05-07
 tags: ["blog"]
 ---
 

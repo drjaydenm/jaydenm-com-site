@@ -4,6 +4,8 @@ title = "Jayden Meyer"
 theme = "jaydenm"
 enableEmoji = true
 enableRobotsTXT = true
+pygmentsCodefences = true
+pygmentsStyle = "monokai"
 
 [params]
   avatar = "profile.jpg"

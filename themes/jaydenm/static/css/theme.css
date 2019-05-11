@@ -37,6 +37,16 @@ tbody tr:nth-child(2n+1) {
     margin-right: 0.2rem;
     display: inline-block;
 }
+.highlight code,
+.highlight kbd {
+    background-color: inherit;
+    color: inherit;
+    border-radius: 0;
+}
+.highlight pre {
+    border-radius: 6px;
+    overflow: hidden;
+}
 
 nav {
     border-top: 0.35rem solid #1BADFC;
