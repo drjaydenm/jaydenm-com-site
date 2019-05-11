@@ -136,8 +136,20 @@ nav a img {
     line-height: 1.7rem;
     font-size: 1.1rem;
 }
+.post-body h1 {
+    font-size: 1.5rem;
+}
+.post-body h2 {
+    font-size: 1.2rem;
+}
+.post-body h3 {
+    font-size: 1rem;
+}
 .post-body .related-posts {
     column-count: 2;
+}
+.post-body .related-posts-rule {
+    margin: 3rem auto;
 }
 
 .sidebar {

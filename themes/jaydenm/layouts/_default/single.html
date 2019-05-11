@@ -24,7 +24,7 @@
           {{ .Content }}
           {{ $relatedPosts := first 3 ( where ( where .Site.Pages.ByDate.Reverse ".Params.tags" "intersect" .Params.tags ) "Permalink" "!=" .Permalink ) }}
           {{ if and ( ne .Page.Section "projects" ) ( gt ( len $relatedPosts ) 0 ) }}
-          <hr>
+          <hr class="related-posts-rule">
           <h3>Related Posts</h3>
           <div class="related-posts">
             {{ range $relatedPosts }}
