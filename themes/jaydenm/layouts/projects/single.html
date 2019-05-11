@@ -12,7 +12,7 @@
         </div>
         <div class="post-meta">
           <time datetime="{{ .Date }}">Date Started: <span class="label">{{ .Date.Format "January 2, 2006" }}</span></time>
-          <p>Status: <span class="label">{{ cond (ne .Status "") .Status "Ongoing" }}</span></p>
+          <p>Status: <span class="label">{{ cond (ne .Params.status "") .Params.status "Ongoing" }}</span></p>
           {{ range $index, $link := .Params.links }}
           <p>Link {{ add $index 1 }}: <a href="{{ . }}" target="_blank">{{ . }}</a></p>
           {{ end }}
