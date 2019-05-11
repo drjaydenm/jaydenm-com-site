@@ -24,4 +24,6 @@ hugo serve -D
 
 ```
 hugo
+
+./publish.sh
 ```
