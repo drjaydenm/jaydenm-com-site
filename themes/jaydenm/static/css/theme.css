@@ -42,10 +42,11 @@ tbody tr:nth-child(2n+1) {
     background-color: inherit;
     color: inherit;
     border-radius: 0;
+    overflow-x: initial;
 }
 .highlight pre {
     border-radius: 6px;
-    overflow: hidden;
+    overflow-x: auto;
 }
 
 nav {
@@ -107,6 +108,7 @@ nav a img {
 .wrap .content {
     margin: 0 2rem;
     flex: 1;
+    min-width: 0;
 }
 .content .container {
     margin: 0 auto 2rem auto;
