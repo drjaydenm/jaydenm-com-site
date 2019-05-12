@@ -5,6 +5,8 @@ date: 2019-05-09
 tags: ["hugo"]
 ---
 
+Just the other day, I decided to rebuild my personal website. This post covers my decision around using Hugo to build out the sites content.
+
 # Why not Wordpress?
 
 When rebuilding this site, one of my goals was to try and avoid any server-side hosting. There were a few reasons behind doing this:
@@ -18,6 +20,8 @@ When rebuilding this site, one of my goals was to try and avoid any server-side 
 * I've never really committed to building a fully static site, so I wanted to see how far I could take it with plain ol' HTML
 
 So I set out to start planning how the site would come together.
+
+This article covers the reasons why I chose Hugo over alternatives and then goes through my process to build a site. If you would like to also read about getting the Hugo site deployed using S3 and CloudFront, [read my next article]({{< ref "hugo-with-s3-cloudfront.md" >}}).
 
 # To SPA, or not to SPA?
 
@@ -121,7 +125,7 @@ Hugo will output all of the site content as HTML to the `public` directory which
 
 # What Now?
 
-I made the choice to use S3 website hosting functionality to host the site. This was mainly due to me already having an AWS account setup and being familiar with S3 and the rest of the AWS ecosystem. I'll cover this process in a future post.
+I made the choice to use S3 Web Hosting functionality to host the site. This was mainly due to me already having an AWS account setup and being familiar with S3 and the rest of the AWS ecosystem. This is covered in my next post if you would like to [read about that]({{< ref "hugo-with-s3-cloudfront.md" >}}).
 
 If you want to see the code that I ended up with, you can take a look on [Github here](https://github.com/drjaydenm/jaydenm-com-site).
 
