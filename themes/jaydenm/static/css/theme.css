@@ -15,10 +15,11 @@ a[href^="mailto"]::before {
     display: none;
 }
 figure {
-    margin: 0 auto;
+    margin: 2rem auto;
 }
 figure img {
     display: block;
+    margin: 0 auto;
 }
 figcaption {
     text-align: center;
@@ -36,6 +37,9 @@ tbody tr:nth-child(2n+1) {
     border-radius: 6px;
     margin-right: 0.2rem;
     display: inline-block;
+}
+.highlight {
+    margin: 2rem auto;
 }
 .highlight code,
 .highlight kbd {
