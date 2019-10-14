@@ -184,13 +184,7 @@ If you aren't familiar with using a pass-through Bash script as your container e
 
 * You have a central place to apply once-off runtime configuration when starting the container
 
-* When using `docker run` commands like
-
-    ```bash
-    docker run -it ubuntu-vnc /bin/bash
-    ```
-
-    your pass-through script will still get executed first as it is the entrypoint, then the `exec "$@"` will execute the initial command `/bin/bash`
+* When using `docker run` commands like `docker run -it ubuntu-vnc /bin/bash`, your pass-through script will still get executed first as it is the entrypoint, then the `exec "$@"` will execute the initial command `/bin/bash`
 
 * You can run initial startup sanity checks if required and exit the container early
 
