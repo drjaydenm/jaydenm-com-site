@@ -3,6 +3,7 @@ title: "Building a Docker X11 Desktop Environment"
 description: "I cover how and why I built an immutable workstation X11 environment running inside a Docker container"
 date: 2019-10-14
 tags: ["docker", "workstation", "linux"]
+header_image: "header.jpg"
 ---
 
 # The #immutable dream

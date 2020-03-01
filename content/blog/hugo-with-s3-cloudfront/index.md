@@ -3,11 +3,12 @@ title: "Hosting Hugo with S3 and CloudFront"
 description: "If you use S3 and CloudFront to publish your Hugo site, here are some tips and tricks to help you out"
 date: 2019-05-12
 tags: ["hugo", "s3", "cloudfront"]
+header_image: "header.jpg"
 ---
 
-I recently decided to rebuild my personal website. I made the decision to use Hugo to build out the sites content. For more background on why I chose Hugo, you can [read my previous post]({{< ref "why-i-chose-hugo.md" >}}).
+I recently decided to rebuild my personal website. I made the decision to use Hugo to build out the sites content. For more background on why I chose Hugo, you can [read my previous post]({{< ref "why-i-chose-hugo" >}}).
 
-I also made the decision to avoid using any server-side hosting. For all of the details around this decision, again, you could [check out my previous post]({{< ref "why-i-chose-hugo.md" >}}) :smirk:. But the tl;dr of those reasons is:
+I also made the decision to avoid using any server-side hosting. For all of the details around this decision, again, you could [check out my previous post]({{< ref "why-i-chose-hugo" >}}) :smirk:. But the tl;dr of those reasons is:
 
 * This site is static - it only changes when I post/update content
 
@@ -130,4 +131,4 @@ Overall, I am quite happy where this ended up. I got some experience using Lambd
 
 It is a little annoying that the S3 Web Hosting feature doesn't support HTTPS, but there are apparently [loads of features coming soon](https://aws.amazon.com/blogs/aws/amazon-s3-path-deprecation-plan-the-rest-of-the-story/) - maybe some of those will boost the usefulness of the Web Hosting functionality.
 
-As always, if you have any questions or suggestions, I would love to hear from you. Also, if you are interested in why I chose Hugo for my site, [check out my previous post]({{< ref "why-i-chose-hugo.md" >}}).
+As always, if you have any questions or suggestions, I would love to hear from you. Also, if you are interested in why I chose Hugo for my site, [check out my previous post]({{< ref "why-i-chose-hugo" >}}).

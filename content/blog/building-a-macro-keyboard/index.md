@@ -3,6 +3,7 @@ title: "Building a Macro Keyboard"
 description: ""
 date: 2019-07-08
 tags: ["electronics", "keyboard", "diy"]
+header_image: "header.jpg"
 ---
 
 # Inspiration
