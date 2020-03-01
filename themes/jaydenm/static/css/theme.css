@@ -127,6 +127,13 @@ nav a img {
     display: inline-block;
 }
 
+.post-heading .post-heading-image {
+    height: 15rem;
+    margin: -4rem -5rem 2em -5rem;
+    background-size: cover;
+    background-position: center;
+}
+
 .post-meta {
     color: #AAA;
     font-size: 0.8rem;
@@ -249,6 +256,10 @@ footer a {
         padding: 2rem;
     }
 
+    .post-heading .post-heading-image {
+        margin: -2rem -2rem 1em -2rem;
+    }
+    
     .sidebar {
         padding: 1rem;
     }
@@ -307,6 +318,9 @@ footer a {
         padding: 1rem;
     }
 
+    .post-heading .post-heading-image {
+        margin: -1rem -1rem 0.5em -1rem;
+    }
     .post-body .related-posts {
         column-count: 1;
     }
