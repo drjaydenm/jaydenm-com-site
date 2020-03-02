@@ -114,13 +114,20 @@ nav a img {
     flex: 1;
     min-width: 0;
 }
+.content .list-title {
+    margin-bottom: 1.5rem;
+}
 .content .container {
     margin: 0 auto 2rem auto;
     background-color: #FFF;
     padding: 4rem 5rem;
     box-sizing: border-box;
 }
-.content.projects {
+.content-list h2 {
+    font-size: 2rem;
+}
+
+.content.projects .content-list {
     columns: 2;
 }
 .content.projects .container {
@@ -132,6 +139,7 @@ nav a img {
     margin: -4rem -5rem 2em -5rem;
     background-size: cover;
     background-position: center;
+    display: block;
 }
 
 .post-meta {
@@ -314,6 +322,9 @@ footer a {
         padding: 2rem 0;
     }
 
+    .content .list-title {
+        margin: 0 1rem 1.5rem 1rem;
+    }
     .content .container {
         padding: 1rem;
     }

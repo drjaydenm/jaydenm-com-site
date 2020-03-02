@@ -3,33 +3,36 @@
   {{ partial "header" . }}
   <div class="wrap wrap-sidebar">
     {{ partial "sidebar" . }}
-    <div class="content list">
-      {{ range .Data.Pages.ByPublishDate.Reverse }}
-      <div class="container">
-        <div class="post-heading">
-          {{ if .Params.header_image }}
-          <div class="post-heading-image" style="background-image: url('{{ .Permalink }}{{ .Params.header_image }}');"></div>
-          {{ end }}
-          <h1>
-            <strong><a href="{{ .Permalink }}">{{ .Title }}</a></strong>
-          </h1>
-        </div>
-        <div class="post-meta">
-          <time datetime="{{ .Date }}">{{ .Date.Format "January 2, 2006" }}</time>
-          {{ if .Params.tags }}
-          <p>
-            {{ range .Params.tags }}
-            <a class="post-tag" href="{{ $.Site.BaseURL }}tags/{{ . }}/">#{{ . }}</a>
+    <div class="content">
+      <h1 class="list-title">{{ .Title }}</h1>
+      <div class="content-list">
+        {{ range .Data.Pages.ByPublishDate.Reverse }}
+        <div class="container">
+          <div class="post-heading">
+            {{ if .Params.header_image }}
+            <a class="post-heading-image" style="background-image: url('{{ .Permalink }}{{ .Params.header_image }}');" href="{{ .Permalink }}"></a>
             {{ end }}
-          </p>
-          {{ end }}
+            <h2>
+              <strong><a href="{{ .Permalink }}">{{ .Title }}</a></strong>
+            </h2>
+          </div>
+          <div class="post-meta">
+            <time datetime="{{ .Date }}">{{ .Date.Format "January 2, 2006" }}</time>
+            {{ if .Params.tags }}
+            <p>
+              {{ range .Params.tags }}
+              <a class="post-tag" href="{{ $.Site.BaseURL }}tags/{{ . }}/">#{{ . }}</a>
+              {{ end }}
+            </p>
+            {{ end }}
+          </div>
+          <div class="post-body">
+            {{ .Summary }}
+          </div>
+          <p><a href="{{ .RelPermalink }}" class="">Continue Reading...</a></p>
         </div>
-        <div class="post-body">
-          {{ .Summary }}
-        </div>
-        <p><a href="{{ .RelPermalink }}" class="">Continue Reading...</a></p>
+        {{ end }}
       </div>
-      {{ end }}
     </div>
   </div>
   {{ partial "footer" . }}

@@ -6,6 +6,7 @@ enableEmoji = true
 enableRobotsTXT = true
 pygmentsCodefences = true
 pygmentsStyle = "monokai"
+pluralizeListTitles = false
 
 [params]
   avatar = "profile.jpg"

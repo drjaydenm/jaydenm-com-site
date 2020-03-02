@@ -3,30 +3,33 @@
   {{ partial "header" . }}
   <div class="wrap wrap-sidebar">
     {{ partial "sidebar" . }}
-    <div class="content list projects">
-      {{ range .Data.Pages.ByPublishDate.Reverse }}
-      <div class="container">
-        <div class="post-heading">
-          <h1>
-            <strong><a href="{{ .Permalink }}">{{ .Title }}</a></strong>
-          </h1>
-        </div>
-        <div class="post-meta">
-          <time datetime="{{ .Date }}">Date Started: <span class="label">{{ .Date.Format "January 2, 2006" }}</span></time>
-          {{ if .Params.tags }}
-          <p>
-            {{ range .Params.tags }}
-            <a class="post-tag" href="{{ $.Site.BaseURL }}tags/{{ . }}/">#{{ . }}</a>
+    <div class="content projects">
+      <h1 class="list-title">{{ .Title }}</h1>
+      <div class="content-list">
+        {{ range .Data.Pages.ByPublishDate.Reverse }}
+        <div class="container">
+          <div class="post-heading">
+            <h2>
+              <strong><a href="{{ .Permalink }}">{{ .Title }}</a></strong>
+            </h2>
+          </div>
+          <div class="post-meta">
+            <time datetime="{{ .Date }}">Date Started: <span class="label">{{ .Date.Format "January 2, 2006" }}</span></time>
+            {{ if .Params.tags }}
+            <p>
+              {{ range .Params.tags }}
+              <a class="post-tag" href="{{ $.Site.BaseURL }}tags/{{ . }}/">#{{ . }}</a>
+              {{ end }}
+            </p>
             {{ end }}
-          </p>
-          {{ end }}
+          </div>
+          <div class="post-body">
+            {{ .Params.description }}
+          </div>
+          <p><a href="{{ .RelPermalink }}" class="">Read more</a></p>
         </div>
-        <div class="post-body">
-          {{ .Params.description }}
-        </div>
-        <p><a href="{{ .RelPermalink }}" class="">Read more</a></p>
+        {{ end }}
       </div>
-      {{ end }}
     </div>
   </div>
   {{ partial "footer" . }}
