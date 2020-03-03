@@ -26,8 +26,10 @@
       {{- end -}}
     {{- end -}}
     </title>
-    <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}css/water.light.min.css" />
-    <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}css/theme.css" />
+    {{ $waterCss := resources.Get "css/water.light.min.css" }}
+    {{ $themeCss := resources.Get "css/theme.css" }}
+    {{ $bundleCss := slice $waterCss $themeCss | resources.Concat "css/bundle.css" | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet" type="text/css" href="{{ $bundleCss.Permalink }}" integrity="{{ $bundleCss.Data.Integrity }}" />
     {{ range .Site.Params.custom_css }}
     <link rel="stylesheet" href="{{ $.Site.BaseURL}}{{ . }}">
     {{ end }}

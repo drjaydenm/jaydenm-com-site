@@ -1,4 +1,6 @@
-{{- range .Site.Params.custom_js -}}
+{{ range .Site.Params.custom_js }}
 <script src="{{ $.Site.BaseURL }}{{ . }}"></script>
 {{ end }}
-<script src="{{ .Site.BaseURL }}js/theme.js"></script>
+{{ $themeJs := resources.Get "js/theme.js" }}
+{{ $bundleJs := $themeJs | resources.Minify | resources.Fingerprint }}
+<script src="{{ $bundleJs.Permalink }}" integrity="{{ $bundleJs.Data.Integrity }}"></script>
