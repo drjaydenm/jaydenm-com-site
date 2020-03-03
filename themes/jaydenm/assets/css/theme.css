@@ -312,7 +312,7 @@ footer a {
         margin: 0;
     }
 
-    .content.projects {
+    .content.projects .content-list {
         columns: 1;
     }
 }
