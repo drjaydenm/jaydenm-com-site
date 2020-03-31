@@ -18,13 +18,12 @@ This is by no means a comprehensive guide that will cover every scenario, or som
 
 # Posts in the series
 
-I'm planning on making this a three part series as I found most tasks fit into one of these buckets:
+I'm planning on making this a two part series as I found most tasks fit into one of these buckets:
 
 1. Planning & Pre-migration
-1. Migrating
-1. Modernising
+1. Migrating & Modernising
 
-Keep on reading for more detail on why I've split it up this way.
+Keep on reading for more detail on why I've split it up into these 4 phases.
 
 # Why migrate from .NET Framework to .NET Core
 
@@ -124,6 +123,8 @@ First and foremost, you want to ensure that the target environment supports .NET
 
 Secondly, you need to ensure that whatever method you use to get your environment specific configuration into your application, is compatible with .NET Core and isn't tightly coupled to .NET Framework.
 
+---
+
 # Pre-Migration
 
 With the planning part now complete, you should have started to form a fairly solid timeline estimate for the migration project.
@@ -168,4 +169,6 @@ In this post, we have covered:
 - Explored the first part of the migration process, planning
 - Went over what work can and should be performed prior to starting the .NET Core migration
 
-If I have missed anything you can think of, please let me know and I'll update it. My goal is to compile a source for everything required in the migration process to assist anyone carrying out a migration in the future. Stay tuned for the next post in the series covering the actual migration.
+If I have missed anything you can think of, please let me know and I'll update it. My goal is to compile a source for everything required in the migration process to assist anyone carrying out a migration in the future. 
+
+To keep on reading, check out the [next post in the series]({{< ref "blog/migrate-dotnet-framework-to-core-part2" >}}).

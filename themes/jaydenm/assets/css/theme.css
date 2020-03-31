@@ -29,6 +29,9 @@ figcaption {
 tbody tr:nth-child(2n+1) {
     background-color: #FBFBFB;
 }
+hr {
+    margin: 2rem auto 3rem auto;
+}
 
 .label {
     color: #FFF;
