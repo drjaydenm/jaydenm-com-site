@@ -7,7 +7,7 @@ phases:
   pre_build:
     commands:
       - echo Installing Hugo...
-      - export HUGO_VERSION="0.65.3"
+      - export HUGO_VERSION="0.96.0"
       - wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.deb
       - dpkg -i hugo_${HUGO_VERSION}_Linux-64bit.deb
       - BUILD_NUMBER=$(date +%Y%m%d-%H%M%S)
