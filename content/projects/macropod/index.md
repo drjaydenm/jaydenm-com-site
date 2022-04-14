@@ -4,6 +4,7 @@ date:  2019-03-31
 status: "Complete"
 description: "The macropod is a basic macro keyboard that I designed and built from the ground up, including PCB design and layout, manufacturing and firmware development"
 links: ["https://github.com/drjaydenm/macropod"]
+header_image: "final1.jpg"
 ---
 
 The macropod is a basic macro keyboard that I designed and built from the ground up, including PCB design and layout, manufacturing and firmware development. I originally started the project to learn about building electronics, and at the time, I wanted a keyboard that could automate macros without software.

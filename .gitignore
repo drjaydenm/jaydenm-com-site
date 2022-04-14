@@ -3,3 +3,6 @@ public
 
 # OSX thumbnails file
 .DS_Store
+
+# Hugo
+.hugo_build.lock

@@ -4,6 +4,7 @@ date: 2012-02-25
 status: "Complete"
 description: "A game engine written from the ground up in C# using DirectX and OpenGL targeting Windows, OSX & Linux"
 links: ["https://www.youtube.com/watch?v=5JApIUeIW0U"]
+header_image: "snowengine.jpg"
 ---
 
 {{< figure src="snowengine.jpg" title="In-game screenshot" >}}
