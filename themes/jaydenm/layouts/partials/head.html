@@ -8,9 +8,9 @@
     {{ $description := .Site.Params.description }}
     {{ if ( eq .Kind "page" ) }}
       {{ $description = .Summary }}
-      {{ if .Params.description }}
-        {{ $description = .Params.description }}
-      {{ end }}
+    {{ end }}
+    {{ if .Params.description }}
+      {{ $description = .Params.description }}
     {{ end }}
     {{ if $description }}<meta name="description" content="{{ truncate 150 $description }}">{{ end }}
     <link rel="shortcut icon" type="image/x-icon" href="{{ .Site.BaseURL }}favicon.ico">
