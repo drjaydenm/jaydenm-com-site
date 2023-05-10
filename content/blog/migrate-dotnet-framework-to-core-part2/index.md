@@ -2,7 +2,7 @@
 title: "Migrating .NET Framework Applications to .NET Core (Part 2)"
 description: "The second post in my series on migrating from .NET Framework to .NET Core. I cover everything from upgrading packages, right through to using the modern features"
 date: 2020-03-08
-tags: ["dotnet", "c#"]
+tags: ["dotnet", "csharp"]
 header_image: "header.jpg"
 ---
 
