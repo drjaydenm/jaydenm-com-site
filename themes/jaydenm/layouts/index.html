@@ -1,9 +1,3 @@
-{{ partial "head" . }}
-<body>
-  {{ partial "header" . }}
-  <div class="wrap">
-    {{ partial "about" . }}
-  </div>
-  {{ partial "footer" . }}
-</body>
-</html>
+{{ define "main" }}
+  {{ partial "about" . }}
+{{ end }}

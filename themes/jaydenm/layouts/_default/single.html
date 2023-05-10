@@ -1,47 +1,40 @@
-{{ partial "head" . }}
-<body>
-  {{ partial "header" . }}
-  <div class="wrap wrap-sidebar">
-    {{ partial "sidebar" . }}
-    <div class="content">
-      <div class="container">
-        <div class="post-heading">
-          {{ if .Params.header_image }}
-          <div class="post-heading-image" style="background-image: url('{{ .Permalink }}{{ .Params.header_image }}');"></div>
-          {{ end }}
-          <h1>
-            <a href="{{ .Permalink }}">{{ .Title }}</a>
-          </h1>
-        </div>
-        <div class="post-meta">
-          <time datetime="{{ .Date }}">{{ .Date.Format "January 2, 2006" }}</time>
-          {{ if .Params.tags }}
-          <p>
-            {{ range .Params.tags }}
-            <a class="post-tag" href="{{ $.Site.BaseURL }}tags/{{ . }}/">#{{ . }}</a>
-            {{ end }}
-          </p>
-          {{ end }}
-        </div>
-        <div class="post-body">
-          {{ .Content }}
-          {{ $relatedPosts := first 3 ( where ( where .Site.Pages.ByDate.Reverse ".Params.tags" "intersect" .Params.tags ) "Permalink" "!=" .Permalink ) }}
-          {{ if and ( ne .Page.Section "projects" ) ( gt ( len $relatedPosts ) 0 ) }}
-          <hr class="related-posts-rule">
-          <h3>Related Posts</h3>
-          <div class="related-posts">
-            {{ range $relatedPosts }}
-            <a href="{{ .RelPermalink }}" class="post-card">
-              <h4>{{ .Title | markdownify }}</h4>
-              <p>{{ .Date.Format "January 2, 2006" }}</p>
-            </a>
-            {{ end }}
-          </div>
-          {{ end }}
-        </div>
+{{ define "main" }}
+
+  <div class="container">
+    <div class="post-heading">
+      {{ if .Params.header_image }}
+      <div class="post-heading-image" style="background-image: url('{{ .Permalink }}{{ .Params.header_image }}');"></div>
+      {{ end }}
+      <h1>
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+      </h1>
+    </div>
+    <div class="post-meta">
+      <time datetime="{{ .Date }}">{{ .Date.Format "January 2, 2006" }}</time>
+      {{ if .Params.tags }}
+      <p>
+        {{ range .Params.tags }}
+        <a class="post-tag" href="{{ $.Site.BaseURL }}tags/{{ . }}/">#{{ . }}</a>
+        {{ end }}
+      </p>
+      {{ end }}
+    </div>
+    <div class="post-body">
+      {{ .Content }}
+      {{ $relatedPosts := first 3 ( where ( where .Site.Pages.ByDate.Reverse ".Params.tags" "intersect" .Params.tags ) "Permalink" "!=" .Permalink ) }}
+      {{ if and ( ne .Page.Section "projects" ) ( gt ( len $relatedPosts ) 0 ) }}
+      <hr class="related-posts-rule">
+      <h3>Related Posts</h3>
+      <div class="related-posts">
+        {{ range $relatedPosts }}
+        <a href="{{ .RelPermalink }}" class="post-card">
+          <h4>{{ .Title | markdownify }}</h4>
+          <p>{{ .Date.Format "January 2, 2006" }}</p>
+        </a>
+        {{ end }}
       </div>
+      {{ end }}
     </div>
   </div>
-  {{ partial "footer" . }}
-</body>
-</html>
+
+{{ end }}

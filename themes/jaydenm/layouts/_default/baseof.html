@@ -1,0 +1,20 @@
+{{- $wrapClasses := "wrap" -}}
+{{- if not .Params.HideSidebar -}}
+  {{- $wrapClasses = print $wrapClasses " wrap-sidebar" -}}
+{{- end -}}
+
+{{ partial "head" . }}
+<body>
+  {{ partial "tags_body" . }}
+  {{ partial "header" . }}
+  <div class="{{ $wrapClasses }}">
+    {{- if not .Params.HideSidebar -}}
+    {{ partial "sidebar" . }}
+    {{- end -}}
+    <div class="content {{ .Params.Class }}">
+      {{ block "main" . }}{{ end }}
+    </div>
+  </div>
+  {{ partial "footer" . }}
+</body>
+</html>

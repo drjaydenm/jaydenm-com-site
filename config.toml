@@ -13,6 +13,7 @@ pluralizeListTitles = false
   author = "Jayden Meyer"
   description = "This is the site of Jayden Meyer, a Software Developer. I talk about programming, hardware and other projects I've worked on"
   home_image = "img/home.png"
+  gtmID = "GTM-T522HDD"
   
 [params.social]
   Github = "drjaydenm"

@@ -26,6 +26,7 @@
       {{- end -}}
     {{- end -}}
     </title>
+    {{ partial "tags_head" . -}}
     {{ $waterCss := resources.Get "css/water.light.min.css" }}
     {{ $themeCss := resources.Get "css/theme.css" }}
     {{ $bundleCss := slice $waterCss $themeCss | resources.Concat "css/bundle.css" | resources.Minify | resources.Fingerprint }}
