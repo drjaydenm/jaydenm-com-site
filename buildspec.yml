@@ -1,9 +1,6 @@
 version: 0.2
 
 phases:
-  install:
-    runtime-versions:
-      docker: 18
   pre_build:
     commands:
       - echo Installing Hugo...
@@ -19,6 +16,7 @@ phases:
       - echo Running Hugo publish...
       - hugo
       - echo Running publish.sh
+      - chmod +x ./publish.sh
       - SKIP_CONFIRM=true ./publish.sh
   post_build:
     commands:
