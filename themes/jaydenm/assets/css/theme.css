@@ -30,8 +30,13 @@ figure {
 figure img {
     display: block;
     margin: 0 auto;
+    max-width: 55%;
+    height: auto;
 }
-figcaption {
+figure.full-width img {
+    max-width: 100%;
+}
+figcaption p {
     text-align: center;
     color: #AAA;
     font-size: 0.8rem;
@@ -306,6 +311,10 @@ footer a {
 }
 
 @media (max-width: 1000px) {
+    figure img {
+        max-width: 65%;
+    }
+
     .wrap .content {
         margin: 0 1rem;
     }

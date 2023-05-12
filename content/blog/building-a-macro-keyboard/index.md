@@ -12,7 +12,7 @@ I've always been interested in building things to find out how they work, even i
 
 I was originally thinking of building a full sized keyboard, but I changed my mind after having to enter a load of GUIDs whilst debugging at work. That got me thinking "what if I had a keyboard that could type out a GUID with a single key-press?". Sure, there are things like AutoHotKey, but where's the fun in that? No need to pull out the soldering iron... we can change that!
 
-{{< figure src="final1.jpg" title="The final keyboard - minus keycaps" >}}
+{{< figure src="final1.jpg" caption="The final keyboard - minus keycaps" >}}
 
 I've always wanted to learn more about the USB protocol too, so this was a great excuse to get down and dirty with it.
 
@@ -30,7 +30,7 @@ I went ahead and ordered the [Nucleo STM32F042K6 dev board](https://www.digikey.
 
 Once the prototyping parts arrived, I put the Nucleo onto a breadboard. I wanted to understand the full stack of software running on the micro (no wrapper libraries like stm32duino), and I found some [great articles](https://vivonomicon.com/2018/04/02/bare-metal-stm32-programming-part-1-hello-arm/) and [basic sample code](https://github.com/willprice/STM32L1-Discovery-baremetal-toolchain/) covering how to get the STM32F0 up and running on the bare-metal.
 
-{{< figure src="proto1.gif" title="A blinking LED, hooray!" >}}
+{{< figure src="proto1.gif" caption="A blinking LED, hooray!" >}}
 
 Below is the [bootstrap assembly code](https://github.com/drjaydenm/stm32_blink), written in ARM32 assembly. It was adapted from the sample links above, but simplified a little to help me understand what was going on.
 
@@ -142,7 +142,7 @@ The next step was to integrate the bare-metal code with the ST standard library.
 
 Integrating the HAL library was a little annoying... There are quite a few quirks that you can only find out by trawling through the code samples (there was no documentation available for me as I am on OSX and the docs use .chm format :man_facepalming:). Also some of the code samples have differences in the way they work - some don't perform all of the standard initialisation code, so if you want to make use of multiple device features (think USB & I2C), you need to make sure you have got every single line of code from the samples, in the right order too. :thumbsup: Here is a [link to the code](https://github.com/drjaydenm/stm32_blink_hal) I ended up with.
 
-{{< figure src="proto2.gif" title="Reading button presses and lighting a LED using the HAL" >}}
+{{< figure src="proto2.gif" caption="Reading button presses and lighting a LED using the HAL" >}}
 
 This is the new revised C main program, excluding GPIO and clock setup, [see here](https://github.com/drjaydenm/stm32_blink_hal/blob/master/src/main.c) for the full file. I now had a basic HAL program that can toggle an LED when an external switch is pressed - getting closer...
 
@@ -187,7 +187,7 @@ This was probably the most time consuming part of writing the firmware. Getting 
 
 The first thing that I came across was getting debouncing working on the Cherry MX keys. If you just send the key characters through as the pins get pulled down to ground, you sometimes get multiple key presses.
 
-{{< figure src="switch_bounce.jpg" title="Signal line when pressing a physical switch" >}}
+{{< figure src="switch_bounce.jpg" caption="Signal line when pressing a physical switch" >}}
 
 Switch debouncing is very common though and has a few different solutions, [the one I went for](https://github.com/drjaydenm/stm32_usb_hid/blob/master/src/keyboard.c) just uses a time delay to wait for the signal to settle.
 
@@ -271,7 +271,7 @@ lastMacroKeyMillis = HAL_GetTick();
 
 By this stage, I was pretty confident that the firmware could do what I wanted, so I started to design the PCB.
 
-{{< figure src="proto3.jpg" title="The prototype macro keyboard - complete with a spliced USB connector" >}}
+{{< figure src="proto3.jpg" caption="The prototype macro keyboard - complete with a spliced USB connector" >}}
 
 # PCB Design
 
@@ -281,7 +281,7 @@ I started out using Autodesk Eagle, but quickly found out you are limited by boa
 
 The first step was to create the schematic. I looked at lots of example STM32F0 schematics for reference to find out what filtering capacitors were required and where. The ST reference docs were also quite handy here and listed the requirements out.
 
-{{< figure src="schematic1.png" title="The filtering capacitors placed nearby VDD, VDDA and VDDIO2" >}}
+{{< figure src="schematic1.png" caption="The filtering capacitors placed nearby VDD, VDDA and VDDIO2" >}}
 
 Along the way whilst designing the circuit, I found that using a key matrix is important when dealing with any more than 10 keys (depending on your chosen micro) as you quickly run out of GPIO pins. Luckily there are some [good guides online](http://blog.komar.be/how-to-make-a-keyboard-the-matrix/) that go into detail on how key matrices work.
 
@@ -295,11 +295,11 @@ In my case this was
 9 pins = 4 keys across + 5 keys high
 ```
 
-{{< figure src="schematic2.png" title="The key matrix for the 4 wide * 5 high keys" >}}
+{{< figure src="schematic2.png" caption="The key matrix for the 4 wide * 5 high keys" >}}
 
 I made sure to have an onboard LED for debugging, and a reset switch so I didn't have to yank the USB every time I wanted to reset.
 
-{{< figure src="schematic3.png" title="Circuitry around the MCU - reset switch in the top-left, debug LED in the bottom-right" >}}
+{{< figure src="schematic3.png" caption="Circuitry around the MCU - reset switch in the top-left, debug LED in the bottom-right" >}}
 
 ## Layout
 
@@ -307,17 +307,17 @@ Now that the schematic was complete, it was time to do the layout portion of the
 
 The first step was to place down the keys, as everything else would have to be routed around them. Once this was done, I placed the diodes down on the front side of the panel next to each key. Then I went ahead and placed the USB connector at the top of the board.
 
-{{< figure src="layout1.png" title="The Cherry MX keys laid out with the diodes to the left of each key" >}}
+{{< figure src="layout1.png" caption="The Cherry MX keys laid out with the diodes to the left of each key" >}}
 
 I then chose to place the MCU, voltage regulator and JTAG connector on the back towards the top near the USB connector. Putting the traces down for the MCU ended up being a little tricky towards the end as I was running out of room to nicely route around the outside due to the holes required by the keys - easily solved by sprinkling in some vias.
 
-{{< figure src="layout2.png" title="The back of the PCB" >}}
+{{< figure src="layout2.png" caption="The back of the PCB" >}}
 
 The worst mistake I made was not putting the screw holes down until the end, which meant I had to move some of the traces around to fit in nicely. Overall, it was a pretty pain-free process as the PCB scale was quite large and wasn't very dense with components leaving lots of room to move things around.
 
-{{< figure src="render1.png" title="The front of the PCB" >}}
+{{< figure src="render1.png" caption="The front of the PCB" >}}
 
-{{< figure src="render2.png" title="The back of the PCB" >}}
+{{< figure src="render2.png" caption="The back of the PCB" >}}
 
 # PCB Manufacturing
 
@@ -337,9 +337,9 @@ I ordered everything from DigiKey, apart from the Cherry MX keys, which I ordere
 
 With all the components in hand, it was time to start assembling.
 
-{{< figure src="pcb1.jpg" title="5 fresh PCBs from JLCPCB" >}}
+{{< figure src="pcb1.jpg" caption="5 fresh PCBs from JLCPCB" >}}
 
-{{< figure src="pcb2.jpg" title="The business side of the PCB" >}}
+{{< figure src="pcb2.jpg" caption="The business side of the PCB" >}}
 
 Overall assembly was pretty quick, the longest part was soldering on the 20 diodes and 20 switches, everything else was pretty quick.
 
@@ -376,19 +376,19 @@ int main() {
 
 With this bug out of the way, everything was now working correctly!
 
-{{< figure src="macro1.gif" title="" >}}
+{{< figure src="macro1.gif" caption="" >}}
 
 # End Product
 
 With this being my first foray into custom PCBs and surface mount electronics, I am very happy with the outcome.
 
-{{< figure src="final1.jpg" title="" >}}
+{{< figure src="final1.jpg" caption="" >}}
 
-{{< figure src="final2.jpg" title="" >}}
+{{< figure src="final2.jpg" caption="" >}}
 
-{{< figure src="final3.jpg" title="" >}}
+{{< figure src="final3.jpg" caption="" >}}
 
-{{< figure src="final4.jpg" title="" >}}
+{{< figure src="final4.jpg" caption="" >}}
 
 # Future work
 

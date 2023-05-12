@@ -7,7 +7,7 @@ links: ["https://www.youtube.com/watch?v=5JApIUeIW0U"]
 header_image: "snowengine.jpg"
 ---
 
-{{< figure src="snowengine.jpg" title="In-game screenshot" >}}
+{{< figure src="snowengine.jpg" caption="In-game screenshot" class="full-width" >}}
 
 SnowEngine is a game engine that is written in C# utilising both DirectX on Windows and OpenGL on OSX/Linux. The aim of this project is to create the low and high level components of an engine to learn how everything works from cross-platform grahpics development right through to rendering techniques.
 

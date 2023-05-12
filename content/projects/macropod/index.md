@@ -9,8 +9,8 @@ header_image: "final1.jpg"
 
 The macropod is a basic macro keyboard that I designed and built from the ground up, including PCB design and layout, manufacturing and firmware development. I originally started the project to learn about building electronics, and at the time, I wanted a keyboard that could automate macros without software.
 
-{{< figure src="macro1.gif" title="An example macro, which generates a GUID" >}}
+{{< figure src="macro1.gif" caption="An example macro, which generates a GUID" >}}
 
 This was a great learning experience, and I would love to tackle another electronics project in the future. If you are interested in the process I followed, take a read of the [blog post I wrote about it]({{< ref "blog/building-a-macro-keyboard" >}}).
 
-{{< figure src="final1.jpg" title="The finished product, without key-caps" >}}
+{{< figure src="final1.jpg" caption="The finished product, without key-caps" >}}
