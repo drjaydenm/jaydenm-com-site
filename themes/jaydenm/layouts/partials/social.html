@@ -2,35 +2,35 @@
   <ul class="social-links">
     {{ if .Site.Params.Social.Github }}
     <li class="social-github">
-      <a href="https://github.com/{{ .Site.Params.Social.Github }}" target="_blank">
+      <a href="https://github.com/{{ .Site.Params.Social.Github }}" target="_blank" title="GitHub">
         {{ partial "svg/github.svg" }}
       </a>
     </li>
     {{ end }}
     {{ if .Site.Params.Social.Youtube }}
     <li class="social-youtube">
-      <a href="https://youtube.com/user/{{ .Site.Params.Social.Youtube }}" target="_blank">
+      <a href="https://youtube.com/user/{{ .Site.Params.Social.Youtube }}" target="_blank" title="YouTube">
         {{ partial "svg/youtube.svg" }}
       </a>
     </li>
     {{ end }}
     {{ if .Site.Params.Social.Email }}
     <li class="social-email">
-      <a href="mailto:{{ .Site.Params.Social.Email }}" target="_blank">
+      <a href="mailto:{{ .Site.Params.Social.Email }}" target="_blank" title="Email">
         {{ partial "svg/email.svg" }}
       </a>
     </li>
     {{ end }}
     {{ if .Site.Params.Social.LinkedIn }}
     <li class="social-linkedin">
-      <a href="https://linkedin.com/in/{{ .Site.Params.Social.LinkedIn }}" target="_blank">
+      <a href="https://linkedin.com/in/{{ .Site.Params.Social.LinkedIn }}" target="_blank" title="LinkedIn">
         {{ partial "svg/linkedin.svg" }}
       </a>
     </li>
     {{ end }}
     {{ if .Site.Params.Social.Stackoverflow }}
     <li class="social-stackoverflow">
-      <a href="https://stackoverflow.com/users/{{ .Site.Params.Social.Stackoverflow }}" target="_blank">
+      <a href="https://stackoverflow.com/users/{{ .Site.Params.Social.Stackoverflow }}" target="_blank" title="Stack Overflow">
         {{ partial "svg/stackoverflow.svg" }}
       </a>
     </li>

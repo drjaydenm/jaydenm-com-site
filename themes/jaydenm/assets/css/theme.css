@@ -12,7 +12,7 @@ body {
     flex-direction: column;
 }
 a {
-    color: #1BADFC;
+    color: #1d91d0;
     transition: all linear 0.15s;
     text-decoration: underline 0.075rem rgba(0, 0, 0, 0);
     text-underline-offset: 0.35rem;
@@ -67,7 +67,7 @@ hr {
 }
 
 nav {
-    border-top: 0.35rem solid #1BADFC;
+    border-top: 0.35rem solid #1d91d0;
     background-color: #FFF;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.075);
 }
@@ -88,7 +88,7 @@ nav a {
     display: inline-block;
 }
 nav a:hover {
-    text-decoration-color: #1BADFC;
+    text-decoration-color: #1d91d0;
 }
 nav a img {
     width: 1.5rem;
@@ -168,7 +168,7 @@ nav a img {
     color: #363636;
 }
 .post-heading a:hover {
-    text-decoration: underline 0.075rem #1BADFC;
+    text-decoration: underline 0.075rem #1d91d0;
 }
 .post-heading .post-heading-image {
     height: 15rem;
@@ -224,7 +224,7 @@ nav a img {
     color: #000;
 }
 .sidebar .sidebar-title:hover {
-    text-decoration: underline 0.075rem #1BADFC;
+    text-decoration: underline 0.075rem #1d91d0;
 }
 .sidebar .sidebar-title h2 {
     margin: 0 auto;
@@ -253,7 +253,7 @@ nav a img {
 }
 .post-card:hover > h4,
 .post-card:hover > p {
-    text-decoration: underline 0.075rem #1BADFC;
+    text-decoration: underline 0.075rem #1d91d0;
 }
 .post-card p {
     color: #AAA;
@@ -281,7 +281,7 @@ nav a img {
     transition: fill linear 0.15s;
 }
 .social-links a:hover svg {
-    fill: #1BADFC;
+    fill: #1d91d0;
 }
 .social-links svg {
     width: 1.4rem;
@@ -292,7 +292,7 @@ nav a img {
 }
 
 footer {
-    color: #8F8F8F;
+    color: #616161;
     padding: 0 2rem 2rem 2rem;
 }
 footer .container {
@@ -300,7 +300,7 @@ footer .container {
     padding: 0 1rem;
 }
 footer a {
-    color: #8F8F8F;
+    color: #616161;
     text-decoration: underline;
     text-underline-offset: 0.15rem;
 }
@@ -323,7 +323,7 @@ footer a {
     .post-heading .post-heading-image {
         margin: -2rem -2rem 1rem -2rem;
     }
-    
+
     .sidebar {
         padding: 0 1rem;
     }
