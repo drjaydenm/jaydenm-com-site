@@ -14,18 +14,15 @@
     {{ end }}
     {{ if $description }}<meta name="description" content="{{ truncate 150 $description }}">{{ end }}
     <link rel="shortcut icon" type="image/x-icon" href="{{ .Site.BaseURL }}favicon.ico">
-    <title>
-    {{- $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" -}}
-    {{- if or ( eq $url "/" ) ( eq $url "" ) -}}
-      {{- .Site.Title -}}
-    {{- else -}}
-      {{- if .Params.heading -}}
-        {{- .Params.heading -}}
+    {{- $siteTitle := .Site.Title -}}
+    {{- if ne .Site.Title "" -}}
+      {{- if .Params.TitleOverride -}}
+        {{- $siteTitle = (print .Title) -}}
       {{- else -}}
-        {{- print .Title " - " .Site.Title -}}
+        {{- $siteTitle = (print .Title " | " .Site.Title) -}}
       {{- end -}}
     {{- end -}}
-    </title>
+    <title>{{ $siteTitle }}</title>
     {{ partial "tags_head" . -}}
     {{ $waterCss := resources.Get "css/water.light.min.css" }}
     {{ $themeCss := resources.Get "css/theme.css" }}
@@ -36,4 +33,16 @@
     {{ range .Site.Params.custom_css }}
     <link rel="stylesheet" href="{{ $.Site.BaseURL}}{{ . }}">
     {{ end }}
+    {{- $socialImage := print .Site.BaseURL "img/social-image.png" -}}
+    {{- if .Params.header_image -}}
+      {{- $socialImage = print .Permalink .Params.header_image -}}
+    {{- end -}}
+    <meta property="og:title" content="{{ $siteTitle | safeHTML }}">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="{{ $socialImage }}">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:description" content="{{ $description }}">
+    <meta property="og:site_name" content="Jayden Meyer">
+    <meta name="twitter:image:alt" content="An 8-bit pixel icon">
+    <meta name="twitter:card" content="summary_large_image">
   </head>
