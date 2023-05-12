@@ -14,7 +14,7 @@ pluralizeListTitles = false
   description = "This is the site of Jayden Meyer, a Software Developer. I talk about programming, hardware and other projects I've worked on"
   home_image = "img/home.png"
   gtmID = "GTM-T522HDD"
-  
+
 [params.social]
   Github = "drjaydenm"
   Stackoverflow = "2603735"
@@ -32,3 +32,18 @@ pluralizeListTitles = false
   identifier = "projects"
   weight = 200
   url = "/projects/"
+
+[module]
+[[module.mounts]]
+  source = 'assets'
+  target = 'assets'
+[[module.mounts]]
+  source = 'node_modules/@builder.io/partytown/lib/partytown.js'
+  target = 'assets/js/partytown.js'
+[[module.mounts]]
+  source = 'static'
+  target = 'static'
+[[module.mounts]]
+  source = 'node_modules/@builder.io/partytown/lib'
+  target = 'static/~partytown'
+  excludeFiles = 'debug'

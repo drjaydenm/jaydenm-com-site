@@ -1,0 +1,7 @@
+{
+  "name": "jaydenm-com-site",
+  "version": "0.1.0",
+  "devDependencies": {
+    "@builder.io/partytown": "^0.8.0"
+  }
+}

@@ -1,6 +1,18 @@
+<!-- Partytown Setup -->
+<script type="text/javascript">
+  partytown = {
+    forward: ['dataLayer.push']
+  };
+</script>
+<script type="text/javascript">
+  {{ $partytownJs := resources.Get "js/partytown.js" | js.Build | minify }}
+  {{- $partytownJs.Content | safeJS }}
+</script>
+<!-- End Partytown -->
+
 {{- if .Site.Params.gtmID -}}
 <!-- Google Tag Manager -->
-<script type="text/javascript">
+<script type="text/partytown">
   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=

@@ -1,0 +1,14 @@
+{
+  "comments": {
+    "dependencies": {},
+    "devDependencies": {
+      "@builder.io/partytown": "project"
+    }
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@builder.io/partytown": "^0.8.0"
+  },
+  "name": "jaydenm-com-site",
+  "version": "0.1.0"
+}
