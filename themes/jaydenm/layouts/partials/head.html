@@ -13,6 +13,8 @@
       {{ $description = .Params.description }}
     {{ end }}
     {{ if $description }}<meta name="description" content="{{ truncate 150 $description }}">{{ end }}
+    {{ if .Params.NoIndex }}<meta name="robots" content="noindex">{{ end }}
+    <link rel="canonical" href="{{ .Permalink }}" />
     <link rel="shortcut icon" type="image/x-icon" href="{{ .Site.BaseURL }}favicon.ico">
     {{- $siteTitle := .Site.Title -}}
     {{- if ne .Site.Title "" -}}
