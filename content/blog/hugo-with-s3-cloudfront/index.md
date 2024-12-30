@@ -2,7 +2,7 @@
 title: "Hosting Hugo with S3 and CloudFront"
 description: "If you use S3 and CloudFront to publish your Hugo site, here are some tips and tricks to help you out"
 date: 2019-05-12
-tags: ["hugo", "s3", "cloudfront"]
+tags: ["hugo", "aws", "s3", "cloudfront"]
 header_image: "header.jpg"
 ---
 
